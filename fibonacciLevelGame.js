@@ -11,18 +11,21 @@
  }
 
  /**
-  * Get level of user given a XP
-  * @param {number} xp
-  * @return {number}
+  * OBS: The code above will be very slow if the level were high,
+  * for example 40, then the best way to use that progression
+  * level is create a array with range wished of xp using the
+  * getLevelXp function and the the levels will be the index
+  * of array. See below:
   */
- const getLevel = (xp) => {
-     let level = 1
-     let beforeXp = 0
-     while (true) {
-         let nextXp = getLevelXp(level) * 100
-         if (xp < nextXp)
-             return level
-         beforeXp = nextXp
-         level++
-     }
- }
+
+const xpToLevel = [
+    0,
+    1,
+    2,
+    3,
+    5,
+    8,
+    13,
+    21,
+    34
+]
